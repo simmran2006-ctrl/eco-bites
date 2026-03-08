@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Eco Bites | Smart Food Redistribution</title>
+
+<style>
+
+body{
+font-family: Arial;
+margin:0;
+background:#f4f9f4;
+color:#333;
+}
+
+header{
+background:#0a5c2c;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+.logo{
+width:120px;
+}
+
+nav{
+background:#0f7a3a;
+padding:12px;
+text-align:center;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 15px;
+font-weight:bold;
+}
+
+.hero{
+background:#e8f5e9;
+padding:60px;
+text-align:center;
+}
+
+.hero h1{
+color:#0a5c2c;
+}
+
+button{
+background:#0a5c2c;
+color:white;
+border:none;
+padding:10px 18px;
+margin:10px;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#063a1c;
+}
+
+.section{
+padding:40px;
+text-align:center;
+}
+
+.plan-container{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.plan{
+background:white;
+padding:20px;
+width:230px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.plan h3{
+color:#0a5c2c;
+}
+
+.price{
+font-size:22px;
+font-weight:bold;
+}
+
+.impact{
+background:#e8f5e9;
+padding:40px;
+text-align:center;
+}
+
+.counter{
+font-size:28px;
+font-weight:bold;
+color:#0a5c2c;
+}
+
+.dashboard{
+background:white;
+margin:40px;
+padding:30px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+form{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:10px;
+}
+
+form input, textarea{
+width:250px;
+padding:10px;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+footer{
+background:#0a5c2c;
+color:white;
+text-align:center;
+padding:20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>Eco Bites</h1>
+</header>
+
+<nav>
+
+<a href="#">Home</a>
+<a href="#about">About</a>
+<a href="#plans">Plans</a>
+<a href="#dashboard">Restaurant Dashboard</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
+<section class="hero">
+
+<h1>Smart Food Redistribution Platform</h1>
+
+<p>Connecting Restaurants, NGOs, and Communities</p>
+
+<button>Join as Restaurant</button>
+<button>Partner as NGO</button>
+
+</section>
+
+<section id="about" class="section">
+
+<h2>About Eco Bites</h2>
+
+<p>
+Eco Bites is a technology-driven platform designed to reduce food waste and
+promote sustainability. Restaurants can report surplus food, and our logistics
+network collects and redistributes it through NGOs.
+</p>
+
+<p>
+The platform is managed through one headquarters connected with seven regional
+driving hubs that coordinate pickups and deliveries.
+</p>
+
+</section>
+
+<section id="plans" class="section">
+
+<h2>Subscription Plans</h2>
+
+<div class="plan-container">
+
+<div class="plan">
+
+<h3>Food Plan</h3>
+
+<p class="price">₹7,500/month</p>
+
+<p>Food Pickup Service</p>
+
+<p>Impact Tracking</p>
+
+</div>
+
+<div class="plan">
+
+<h3>Food + Eco Plan</h3>
+
+<p class="price">₹9,500/month</p>
+
+<p>Food Redistribution</p>
+
+<p>Eco Packaging Supply</p>
+
+</div>
+
+<div class="plan">
+
+<h3>Eco Plan</h3>
+
+<p class="price">₹4,500/month</p>
+
+<p>Eco Packaging Only</p>
+
+</div>
+
+<div class="plan">
+
+<h3>NGO Plan</h3>
+
+<p class="price">₹2,000/month</p>
+
+<p>Or ₹300/kg food supply</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="impact">
+
+<h2>Impact Tracker</h2>
+
+<p>Meals Distributed</p>
+
+<div class="counter" id="meals">0</div>
+
+<p>Food Saved (kg)</p>
+
+<div class="counter" id="food">0</div>
+
+<p>CO2 Reduction (kg)</p>
+
+<div class="counter" id="co2">0</div>
+
+</section>
+
+<section id="dashboard" class="dashboard">
+
+<h2>Restaurant Dashboard (Demo)</h2>
+
+<p>Report Surplus Food for Pickup</p>
+
+<button onclick="pickup()">Pickup Ready</button>
+
+<p id="status"></p>
+
+</section>
+
+<section id="contact" class="section">
+
+<h2>Send a Query</h2>
+
+<form>
+
+<input type="text" placeholder="Name">
+
+<input type="email" placeholder="Email">
+
+<textarea placeholder="Your Query"></textarea>
+
+<button type="submit">Submit</button>
+
+</form>
+
+</section>
+
+<footer>
+
+<p>Eco Bites Headquarters connected with 7 Regional Driving Hubs</p>
+
+<p>© 2026 Eco Bites</p>
+
+</footer>
+
+<script>
+
+function pickup(){
+
+document.getElementById("status").innerText =
+"Pickup request sent to nearest hub driver.";
+
+}
+
+function animate(id,end){
+
+let start=0;
+
+let speed=20;
+
+let obj=document.getElementById(id);
+
+let timer=setInterval(function(){
+
+start++;
+
+obj.innerText=start;
+
+if(start>=end){
+
+clearInterval(timer);
+
+}
+
+},speed);
+
+}
+
+animate("meals",120000);
+animate("food",50000);
+animate("co2",20000);
+
+</script>
+
+</body>
+</html>
